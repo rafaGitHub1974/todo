@@ -6,6 +6,7 @@
           ref="taskInput"
           label="Enter task"         
           v-model="task"        
+          @keyup.enter="addTask"
         ></v-text-field>        
       </v-col>
       <v-col md="1" class="mt-4">
