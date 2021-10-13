@@ -5,7 +5,6 @@
       color="primary"
       dark
     >
-
       <v-btn
         href="https://github.com/rafaGitHub1974/todo/"
         target="_blank"
@@ -28,7 +27,6 @@ export default {
   name: 'App',
 
   data: () => ({
-    //
   }),
 };
 </script>

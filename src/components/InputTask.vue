@@ -41,7 +41,7 @@
       }
     },
     mounted() {
-      this.$refs.taskInput.focus();      
+      this.$refs.taskInput.focus();
     },     
     methods: {
       addTask() {
