@@ -72,7 +72,7 @@
           <v-text-field
             v-model="search"
             label="Search (UPPER CASE ONLY)"
-            class="mx-4 md-8"
+            class="mx-4"
           ></v-text-field>
         </template>
         <template v-slot:[`item.itemsStatus`]="{ item }">          
@@ -82,12 +82,11 @@
             item-text="title"
             item-value="id"
             return-object
-            class="md-2"
           ></v-select>                                      
         </template>             
         <template v-slot:[`item.icon`]="{ item }">
-          <v-icon class="md-1" @click="editTask(item)">mdi-pencil</v-icon>
-          <v-icon class="md-1" @click="deleteTask(item)">mdi-delete</v-icon>
+          <v-icon  @click="editTask(item)">mdi-pencil</v-icon>
+          <v-icon  @click="deleteTask(item)">mdi-delete</v-icon>
         </template>
         </v-data-table>
       </v-col>      
@@ -114,9 +113,9 @@
         selectedStatus: { id: 1, title: 'Todo' },                         
         search: '',         
         headers: [     
-        { text: 'Task', align: 'left', value: 'task', sortable: true },                
-        { text: 'Status', align: 'left', value: 'itemsStatus', sortable: false },                
-        { text: 'Icon', align: 'left', value: 'icon', sortable: false }],
+        { text: 'Task', align: 'left', value: 'task', sortable: true, width: '75%' },                
+        { text: 'Status', align: 'center', value: 'itemsStatus', sortable: false, width: '15%' },                
+        { text: 'Icon', align: 'center', value: 'icon', sortable: false, width: '10%' }],
         todoList: [{
           id: 1,
           task: 'Comprar comida semanal',
