@@ -166,7 +166,7 @@
       },
       row_classes(item) {        
         if (item.selectedStatus.id === 3) {
-          return "background-color: grey lighten-1";
+          return "background-color: grey lighten-2";
         } 
     }
     }
