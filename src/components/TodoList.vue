@@ -32,6 +32,7 @@
                   clearable                
                   v-model="modalTaskValue"
                   required
+                  @keyup.enter="saveModalChanges"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -67,6 +68,7 @@
           :items-per-page="5"
           :search="search"
           class="elevation-4 mt-4"
+          :item-class= "row_classes" 
         >     
         <template v-slot:top>
           <v-text-field
@@ -146,11 +148,9 @@
       deleteTask(item) {     
         this.todoList = this.todoList.filter((todoItem) => todoItem.id !== item.id)          
       },
-      editTask(item) {
-        console.log('Has seleccionado editTask: ', item)        
+      editTask(item) {      
         this.selectedIndex = this.todoList.map(e => e.id).indexOf(item.id);
         this.modalTaskValue=this.todoList[this.selectedIndex].task
-        console.log('this.selectedIndex: ', this.selectedIndex)
         this.dialog=true
       },
       getTodoList() {
@@ -163,7 +163,15 @@
       saveModalChanges() {
         this.todoList[this.selectedIndex].task = this.modalTaskValue
         this.dialog = false
-      }
+      },
+      row_classes(item) {        
+        if (item.selectedStatus.id === 3) {
+          return "background-color: grey lighten-1";
+        } 
+    }
     }
   }
 </script>
+<style scoped>
+
+</style>
